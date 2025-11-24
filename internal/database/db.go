@@ -33,5 +33,5 @@ func Connect() {
 
 	log.Println("Connected to PostgreSQL")
 
-	DB.AutoMigrate(&model.UserModel{}, &model.Admin{})
+	DB.AutoMigrate(&model.User{}, &model.Admin{})
 }

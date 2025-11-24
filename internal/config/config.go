@@ -2,6 +2,7 @@ package config
 
 import (
 	"os"
+	"strconv"
 
 	"github.com/joho/godotenv"
 )
@@ -18,6 +19,7 @@ type Config struct {
 
 var Cfg Config
 var JwtToken []byte
+var JwtExpire int
 
 func Load() {
 	_ = godotenv.Load()
@@ -33,6 +35,7 @@ func Load() {
 	}
 
 	JwtToken = []byte(getEnv("JWT_TOKEN", ""))
+	JwtExpire, _ = strconv.Atoi(getEnv("JWT_EXPIRE", "1"))
 }
 
 func getEnv(key string, def string) string {

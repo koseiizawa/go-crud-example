@@ -2,7 +2,7 @@ package handler
 
 import (
 	"errors"
-	"go-crud/internal/dto"
+	"go-crud/internal/dto/request"
 	"go-crud/internal/service"
 	"net/http"
 
@@ -15,7 +15,7 @@ type UserHandler struct {
 }
 
 func (h *UserHandler) Create(c *gin.Context) {
-	var input dto.UserRequest
+	var input request.User
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -58,7 +58,7 @@ func (h *UserHandler) GetById(c *gin.Context) {
 
 func (h *UserHandler) Update(c *gin.Context) {
 	id := c.Param("id")
-	var user dto.UserRequest
+	var user request.User
 	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return

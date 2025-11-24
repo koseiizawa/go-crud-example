@@ -1,6 +1,6 @@
 package model
 
-type UserModel struct {
+type User struct {
 	ID       int    `gorm:"primaryKey"`
 	Name     string `gorm:"size:255"`
 	Email    string `gorm:"uniqueIndex"`

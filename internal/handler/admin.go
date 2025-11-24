@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"go-crud/internal/dto"
+	"go-crud/internal/dto/request"
 	"go-crud/internal/middleware"
 	"go-crud/internal/service"
 	"net/http"
@@ -14,7 +14,7 @@ type AdminHandler struct {
 }
 
 func (h *AdminHandler) SignUp(c *gin.Context) {
-	var input dto.AdminRequest
+	var input request.Admin
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -30,7 +30,7 @@ func (h *AdminHandler) SignUp(c *gin.Context) {
 }
 
 func (h *AdminHandler) LogIn(c *gin.Context) {
-	var input dto.AdminRequest
+	var input request.Admin
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
