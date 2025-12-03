@@ -8,7 +8,7 @@ services:
     environment:
       POSTGRES_USER: star
       POSTGRES_PASSWORD: 123123123
-      POSTGRES_DB: crud
+      POSTGRES_DB: test
     ports:
       - "5432:5432"
     volumes:
