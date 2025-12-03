@@ -1,4 +1,4 @@
-# Go CRUD API
+# Go CRUD API (Backend)
 
 A clean and professional implementation of a CRUD API using **Go**, **Gin**, and **GORM**. This project demonstrates how to build a scalable REST API with proper project structure, validation, database integration, and error handling.
 
